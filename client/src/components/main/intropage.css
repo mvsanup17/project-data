@@ -1,0 +1,16 @@
+.intro-bg{
+    background-image: url('http://localhost:6700/imgData/file_1719147482129.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: yellowgreen;
+}
+
+.text-color{
+    color: yellow;
+}

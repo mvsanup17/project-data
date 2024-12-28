@@ -1,0 +1,27 @@
+.card-btn{
+    background-color: #29ADB2;
+    border: none;
+    padding: 8px 20px 8px 20px;
+    border-radius: 12px;
+    color: white;
+    margin-right: 15px ;
+}
+
+.download-btn{
+    background-color: #FFDE25;
+    border: none;
+    padding: 8px 20px 8px 20px;
+    border-radius: 12px;
+}
+
+.cards{
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, transform 0.3s;
+    border: 3px solid #29ADB2;
+    color: #333;
+}
+
+.cards:hover{
+    box-shadow: 10px 15px 15px grey;
+}

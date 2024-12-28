@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bgcol{
+    background-color: #64BD97;
+}
+
+.navbar{
+    padding: 0;
+}
+
+.text-col{
+    color: black;
+}
+
+.text-col:hover{
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+@media(max-width: 768px){
+    .li-col{
+        background-color: #00BEBE;
+    }
+    .text-col{
+        color: aliceblue;
+    }   
+}
+
+.page-ho:hover{
+    background-color: #00BEBE;
+}
+
+.navbar-brand{
+    cursor:default;
+}

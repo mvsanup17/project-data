@@ -1,0 +1,10 @@
+.text-ho:hover{
+    text-decoration: underline;
+    text-decoration-color: #219C90;
+}
+
+.img-hov{
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgb(0, 0, 0, 0.5);
+    transition: all 0.3s;
+}

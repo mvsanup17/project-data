@@ -1,0 +1,33 @@
+.btn-col{
+    background-color: #29ADB2;
+    border: none;
+    padding: 10px 30px 10px 30px;
+    border-radius: 12px;
+    color: white;
+}
+
+.img-ho{
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgb(0, 0, 0, 0.5);
+    transition: all 0.3s;
+}
+
+.img-ho:hover{
+    transform: scale(1.2);
+}
+
+.texcol{
+    color: green;
+    text-decoration: underline;
+    text-decoration-color: green;
+}
+
+.text-des:hover{
+    text-decoration: underline;
+    text-decoration-color: #29ADB2;
+}
+
+
+
+
+
