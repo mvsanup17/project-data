@@ -40,6 +40,7 @@ app.use(cookieParser())
 app.use(express.json())
 app.use(express.static('public'))
 app.use('/auth', UserRouter)
+app.options('*', cors());
 
 mongoose.connect('mongodb+srv://iamvsanup:3raLvtJYwOZ0FTVG@driveready.0udnccc.mongodb.net/DriveReady?retryWrites=true&w=majority')
 .then(() => app.listen(6700))
