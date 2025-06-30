@@ -25,22 +25,37 @@ router.post('/signup', async (req, res) => {
     return res.json({ status: true, message: "Record registered" });
 });
 
-router.post('/login', async (req,res)=>{
-    const {email,password} = req.body
-    const user = await userData.findOne({email})
-    if(!user){
-        return res.json({message : "User is not Registered"})
+router.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await userData.findOne({ email });
+    if (!user) {
+      return res.status(401).json({ status: false, message: "User is not registered" });
     }
 
-    const validPassword = await bcryptjs.compare(password,user.password)
-    if(!validPassword){
-        return res.json({message: "password is incorrect"})
+    const validPassword = await bcrypt.compare(password, user.password);
+    if (!validPassword) {
+      return res.status(401).json({ status: false, message: "Password is incorrect" });
     }
 
-    const token = jwt.sign({name: user.name}, process.env.KEY, {expiresIn: '1h'})
-    res.cookie('token',token, {httpOnly: true, maxAge: 3600})
-    return res.json({status: true, message: "Login Successfully"})
-})
+    const token = jwt.sign({ name: user.name }, process.env.KEY, { expiresIn: '1h' });
+
+    // ✅ Set cookie correctly for cross-origin (Frontend/Backend on different domains)
+    res.cookie('token', token, {
+      httpOnly: true,
+      secure: true,
+      sameSite: 'None',
+      maxAge: 60 * 60 * 1000 // 1 hour in milliseconds
+    });
+
+    return res.status(200).json({ status: true, message: "Login successfully" });
+
+  } catch (err) {
+    console.error("Login error:", err);
+    return res.status(500).json({ status: false, message: "Server error" });
+  }
+});
 
 
 router.post('/forgot-password', async (req,res) => {
